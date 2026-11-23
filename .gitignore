@@ -1,0 +1,17 @@
+# virtual environments
+venv/
+.venv/
+env/
+
+# python cache
+__pycache__/
+*.py[cod]
+
+# IDE settings
+.idea/
+.vscode/
+
+# local SQLite database
+*.db
+*.sqlite
+*.sqlite3
