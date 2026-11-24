@@ -1,6 +1,6 @@
 from typing import Optional
 from db.database import Base
-from enums import Unit
+from enums import Unit, Difficulty
 from sqlalchemy import ForeignKey, UniqueConstraint, CheckConstraint
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
@@ -50,6 +50,7 @@ class Recipe(Base):
     instructions: Mapped[str]
     prep_time: Mapped[int]
     servings: Mapped[int]
+    difficulty: Mapped[Difficulty]
     author_id: Mapped[int] = mapped_column(ForeignKey("author.id", ondelete="RESTRICT"))
     category_id: Mapped[int | None] = mapped_column(ForeignKey("category.id", ondelete="SET NULL"))
 

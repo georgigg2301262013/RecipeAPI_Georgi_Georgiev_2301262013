@@ -63,6 +63,7 @@ class RecipeService:
                         instructions=data["instructions"],
                         prep_time=data["prep_time"],
                         servings=data["servings"],
+                        difficulty=data["difficulty"],
                         author=author,
                         category=category)
         db_session.add(recipe)
@@ -83,6 +84,7 @@ class RecipeService:
         recipe.instructions = data["instructions"]
         recipe.prep_time = data["prep_time"]
         recipe.servings = data["servings"]
+        recipe.difficulty = data["difficulty"]
         recipe.author = author
         recipe.category = category
         db_session.commit()
@@ -166,6 +168,7 @@ class RecipeService:
             "title": recipe.title,
             "instructions": recipe.instructions,
             "prep_time": recipe.prep_time,
+            "difficulty": recipe.difficulty,
             "author_id": recipe.author_id,
             "category_id": recipe.category_id,
             "original_servings": recipe.servings,
